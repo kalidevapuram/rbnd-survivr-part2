@@ -4,7 +4,7 @@ require_relative "../lib/contestant"
 
 class TestContestant < Minitest::Test
   def setup
-    @contestants = %w(carlos walter aparna trinh diego juliana kanchana juha sofia julia fernando dena orit colt 
+    @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt 
     				  zhalisa farrin muhammed ari rasha gauri)
     @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
   end

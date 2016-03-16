@@ -10,7 +10,7 @@ class TestSurvivr < Minitest::Test
   def setup
     #testing game mechanics
     # Create an array of twenty hopefuls to compete on the island of Borneo
-    @contestants = %w(carlos walter aparna trinh diego juliana kanchana juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
+    @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
     @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
 
     # Create two new tribes with names
@@ -30,7 +30,7 @@ class TestSurvivr < Minitest::Test
   def test_phase_two
     assert_equal 3, phase_two
   end
-  #
+#   #
   def test_phase_three
     assert_equal 7, phase_three
   end

@@ -1,11 +1,11 @@
 class Contestant
 	attr_reader :name
 
-  	def initialize(name)
+  	def initialize(name)  #Initializing the name 
     	@name = name
   	end
 
-  	def to_s
+  	def to_s 
    		@name
   	end
  

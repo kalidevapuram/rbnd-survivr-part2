@@ -6,7 +6,7 @@ require_relative "../lib/contestant"
 class TestGame < Minitest::Test
 
   def setup
-    @contestants = %w(carlos walter aparna trinh diego juliana kanchana juha sofia julia fernando 
+    @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando 
     				dena orit colt zhalisa farrin muhammed ari rasha gauri)
     @contestants.map!{ |contestant| Contestant.new(contestant) }
     @coyopa = Tribe.new({name: "Pagong", members: @contestants.shift(10)})
@@ -16,23 +16,24 @@ class TestGame < Minitest::Test
 
   def test_game_has_tribes
     assert_respond_to @borneo, :tribes
+    
   end
-
+# 
   def test_tribes_is_array
     assert_kind_of Array, @borneo.tribes
   end
-  #
+#   #
   def test_add_tribe
     contestants = ["person_one", "person_two"]
     contestants.map!{ |contestant| Contestant.new(contestant) }
     tribe_three = Tribe.new({name: "tribe", members: contestants})
     assert_equal 3, @borneo.add_tribe(tribe_three).length
   end
-  #
+#   #
   def test_immunity_challenge
     assert_instance_of Tribe, @borneo.immunity_challenge
   end
-  #
+#   #
   def test_clear_tribes
     assert_empty @borneo.clear_tribes
   end
