@@ -12,7 +12,8 @@ class Tribe
     	@name
   	end
 #   
-	def tribal_council(immune: nil)
+	def tribal_council(immune: nil) #this method gives the output of eliminated member
+
 		rejected_member = @members.reject { |member| member == immune }.sample  #rejecting the member and assigning to rejected_member
 		 @members.delete(rejected_member)  #deleting the rejected_member
 		 return rejected_member

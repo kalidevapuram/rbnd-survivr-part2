@@ -10,7 +10,7 @@ class Game
 	end
 # 	
 	def clear_tribes #clears the tribes array
-		@tribes = []
+		return @tribes = []
 	end
 # 	
 	def add_tribe(tribe_three)   #adds third tribe to add_tribe
@@ -24,11 +24,13 @@ class Game
 # 		
 	end 
 # 	
-	def individual_immunity_challenge   #it eliminates one member from phasetwo
+	def individual_immunity_challenge
+
 		return @tribes[0].members.sample
 	end
 # 	
  	def merge(new_tribe_name)  #merging two tribes after phase one
+ 		
  		new_tribe_array =[]
 		@tribes.each do |tribe| 
 			tribe.members.each do |member|
@@ -36,7 +38,8 @@ class Game
  			end
  		end
  		new_tribe = Tribe.new({name: new_tribe_name, members: new_tribe_array})
- 	
+		clear_tribes
+		add_tribe(new_tribe)
  		return new_tribe #returning new tribe array which is instance of tribe class
 	end
 
